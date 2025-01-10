@@ -4,17 +4,23 @@ import axios from 'axios'
 
 function App() {
   const [count, setCount] = useState([])
+  const [count1, setCount1] = useState([])
   const data = async() =>{
     await axios.get('https://dummyjson.com/carts/1')
     .then((res)=>{
          setCount(res.data.products)
       
     })
+    await axios.get('http://localhost:4000/')
+    .then((res)=>{
+      setCount1(res.data)
+   
+ })
   }
  useEffect(()=>{
    data()
  },[])
-  console.log(count);
+  console.log(count1);
   
  
   return (
@@ -26,7 +32,8 @@ function App() {
           
            )
        })
-       }
+       },
+        <h1>{count1.name}</h1>
     </>
   )
 }
