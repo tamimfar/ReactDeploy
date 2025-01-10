@@ -11,7 +11,7 @@ function App() {
          setCount(res.data.products)
       
     })
-    await axios.get('http://localhost:4000/')
+    await axios.get('https://server-tu20.onrender.com/')
     .then((res)=>{
       setCount1(res.data)
    
@@ -28,7 +28,7 @@ function App() {
        <h1>hello my first deploying site </h1>
        {Array.isArray(count) && count?.map((item)=>{
            return(
-             <img key={item.id} src={item.thumbnail} alt="" />
+             <img key={item.id} src={item.thumbnail}  alt="" />
           
            )
        })
