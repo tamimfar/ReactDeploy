@@ -13,14 +13,15 @@ function App() {
     })
     await axios.get('https://server-tu20.onrender.com/hello')
     .then((res)=>{
-      setCount1(res.data)
+      setCount1(res.data.data)
+    
    
  })
   }
  useEffect(()=>{
    data()
  },[])
-  console.log(count1);
+ console.log(count1);
   
  
   return (
@@ -33,7 +34,9 @@ function App() {
            )
        })
        },
-        <h1>{count1.name}</h1>
+       {count1?.map((item)=>{
+        return <h1 key={item._id}>{item.name}</h1>
+       })}
     </>
   )
 }
