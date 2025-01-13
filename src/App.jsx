@@ -11,7 +11,7 @@ function App() {
          setCount(res.data.products)
       
     })
-    await axios.get('https://server-tu20.onrender.com/')
+    await axios.get('https://server-tu20.onrender.com/hello')
     .then((res)=>{
       setCount1(res.data)
    
